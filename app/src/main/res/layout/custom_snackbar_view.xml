@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+            android:id="@+id/snackbarMessages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background_light"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_warning" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_financial_label"
+                    android:textStyle="bold"
+                    android:textColor="@color/car_and_address"
+                    android:textSize="16sp" />
+
+            <TextView
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/snackBarMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/car_and_address"
+                    android:textSize="14sp"
+                    tools:text="Вызвать эвакуатор 15% \nВызвать манипулятор 10%"
+                    android:singleLine="false"
+                    android:inputType="textMultiLine|textImeMultiLine" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+            android:id="@+id/closeButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_black_cross"
+            app:layout_constraintTop_toTopOf="@+id/snackbarMessages"
+            app:layout_constraintEnd_toEndOf="@+id/snackbarMessages" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
