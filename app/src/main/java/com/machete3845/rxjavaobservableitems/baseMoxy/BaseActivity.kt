@@ -40,25 +40,7 @@ abstract class BaseActivity : MvpAppCompatActivity() {
     }
 
     fun showCustomSnackbar(message: String, view: View) {
-        val snackBar = Snackbar
-            .make(view, message, 30000)
 
-        val snackBarView = snackBar.view as Snackbar.SnackbarLayout
-        snackBarView.setBackgroundColor(Color.TRANSPARENT)
-
-        val customSnackView = CustomSnackbarViewBinding.inflate(layoutInflater)
-        customSnackView.snackBarMessage.text = message
-        customSnackView.closeButton.setOnClickListener {
-            snackBar.dismiss()
-        }
-        snackBarView.addView(customSnackView.root)
-
-        val params = snackBarView.layoutParams as FrameLayout.LayoutParams
-        params.setMargins(0, 200, 0, 0)
-        params.gravity = Gravity.TOP
-        snackBarView.layoutParams = params
-        snackBar.animationMode = BaseTransientBottomBar.ANIMATION_MODE_FADE
-        snackBar.show()
     }
 
     fun showLoading(view: View) {

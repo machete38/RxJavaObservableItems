@@ -7,6 +7,6 @@ import moxy.viewstate.strategy.StateStrategyType
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface MainView : BaseView {
     fun setFragment(name: String)
-    fun setOrderFragment(order: Int)
+    fun setOrderFragment(orders: List<OrderModel>)
     fun checkForUpdate()
 }
