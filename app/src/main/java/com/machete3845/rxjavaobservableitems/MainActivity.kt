@@ -1,10 +1,6 @@
 package com.machete3845.rxjavaobservableitems
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.machete3845.rxjavaobservableitems.baseMoxy.BaseActivity
 import com.machete3845.rxjavaobservableitems.databinding.ActivityMainBinding
 import moxy.presenter.InjectPresenter
@@ -20,14 +16,15 @@ class MainActivity : BaseActivity(), MainView {
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(viewBinding.root)
+        presenter.loadOrdersPreview()
     }
 
     override fun setFragment(name: String) {
         TODO("Not yet implemented")
     }
 
-    override fun setOrderFragment(order: Int) {
-        TODO("Not yet implemented")
+    override fun setOrderFragment(orders: List<OrderModel>) {
+        binding.ordersRecycler.adapter = OrdersAdapter(orders)
     }
 
     override fun checkForUpdate() {
