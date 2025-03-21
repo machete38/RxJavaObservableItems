@@ -36,7 +36,6 @@ class RetrofitClient{
     {
         val baseUrl = "https://67d2d82490e0670699bf5997.mockapi.io"
 
-
         @Volatile
         var instance: RetrofitClient? = null
         fun getInstance(): RetrofitClient
